@@ -1,0 +1,60 @@
+# Core dependencies
+python-dotenv==1.0.0
+requests==2.31.0
+aiohttp==3.9.1
+
+# Telegram Bot API
+python-telegram-bot==20.3
+pyrogram==1.4.16
+TgCrypto==1.2.5
+
+# AI/LLM Integration
+openai==1.3.7
+anthropics==0.7.1
+langchain==0.1.0
+langchain-openai==0.0.5
+
+# Database
+sqlalchemy==2.0.23
+alembic==1.13.0
+pypostgresql==1.4.6
+psycopg2-binary==2.9.9
+
+# Web Framework
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Admin Panel & UI
+fastapi-admin==0.2.4
+jinja2==3.1.2
+starlette==0.27.0
+
+# Scheduling & Task Queue
+celery==5.3.4
+redis==5.0.1
+aioredis==2.0.1
+APScheduler==3.10.4
+
+# Analytics
+loguru==0.7.2
+python-json-logger==2.0.7
+pandas==2.1.3
+openpyxl==3.11.0
+
+# Utils
+pytz==2023.3
+python-dateutil==2.8.2
+click==8.1.7
+tabulate==0.9.0
+colorama==0.4.6
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+responses==0.24.1
+
+# Deployment
+gunicorn==21.2.0
+whitenoise==6.6.0
