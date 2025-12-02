@@ -6,6 +6,7 @@ from contextlib import asynccontextmanager
 import logging
 
 from core.config import settings
+from app.api.routes import router as api_router
 
 # Configure logging
 logging.basicConfig(
@@ -46,6 +47,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include API routes
+app.include_router(api_router)
+
 # Health check endpoint
 @app.get("/health")
 async def health_check():
@@ -64,14 +68,14 @@ async def root():
     return {
         "message": f"Welcome to {settings.APP_NAME}",
         "docs": "/docs",
-        "api_version": "1.0.0"
+        "api_version": "1.0.0",
+        "features": [
+            "Content generation with AI",
+            "Telegram integration",
+            "Content scheduling",
+            "Analytics tracking"
+        ]
     }
-
-# API Routes (to be implemented)
-# @app.include_router(content_router, prefix="/api/v1/content", tags=["Content"])
-# @app.include_router(scheduler_router, prefix="/api/v1/scheduler", tags=["Scheduler"])
-# @app.include_router(analytics_router, prefix="/api/v1/analytics", tags=["Analytics"])
-# @app.include_router(telegram_router, prefix="/api/v1/telegram", tags=["Telegram"])
 
 # Exception handlers
 @app.exception_handler(Exception)
