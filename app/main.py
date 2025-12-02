@@ -7,6 +7,8 @@ import logging
 
 from core.config import settings
 from app.api.routes import router as api_router
+from app.services.scheduler_service import SchedulerService
+from app.services.analytics_service import AnalyticsService
 
 # Configure logging
 logging.basicConfig(
@@ -49,6 +51,11 @@ app.add_middleware(
 
 # Include API routes
 app.include_router(api_router)
+
+# Initialize services
+scheduler_service = SchedulerService()
+analytics_service = AnalyticsService()
+    scheduler_service.start()
 
 # Health check endpoint
 @app.get("/health")
